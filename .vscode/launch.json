@@ -1,0 +1,29 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Debug x64",
+            "type": "cppvsdbg",          // 使用 MSVC 调试引擎
+            "request": "launch",
+            "program": "${workspaceFolder}/output/myapp_debug_x64.exe",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "console": "integratedTerminal",
+            "preLaunchTask": "build-debug-x64"  // 与 tasks.json 的 label 一致
+        },
+        {
+            "name": "Release x64",
+            "type": "cppvsdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/output/myapp_release_x64.exe",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "console": "integratedTerminal",
+            "preLaunchTask": "build-release-x64"
+        }
+    ]
+}
