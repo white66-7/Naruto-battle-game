@@ -146,7 +146,11 @@ public:
         const std::string quick[5] = { "resources/1.png", "resources/A1.png", "resources/A2.png","resources/A3.png","resources/1.png"  };
         const std::string run[6] = { "resources/4.png","resources/5.png", "resources/6.png","resources/7.png", "resources/8.png", "resources/9.png" };
         const std::string jump[2] = {"resources/JUMP2.png","resources/JUMP3.png"};
-        const std::string attack[8] = { "resources/火1.png","resources/火2.png", "resources/火3.png","resources/火4.png", "resources/火5.png", "resources/火6.png","resources/火6.png" ,"resources/火6.png" };
+        const std::string attack[8] = { 
+    "resources/fire1.png", "resources/fire2.png", "resources/fire3.png",
+    "resources/fire4.png", "resources/fire5.png", "resources/fire6.png",
+    "resources/fire6.png", "resources/fire6.png" 
+};
         const std::string fire[7] = { "resources/A.png","resources/B.png", "resources/C.png","resources/D.png", "resources/E.png", "resources/F.png","resources/G.png" };
         const std::string cloth[8] = { "resources/11.png","resources/12.png", "resources/13.png","resources/14.png", "resources/15.png", "resources/16.png","resources/17.png" ,"resources/18.png" };
         for (int i = 0;i < 3; ++i)
