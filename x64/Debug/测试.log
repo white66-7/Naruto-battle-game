@@ -1,0 +1,38 @@
+﻿  main.cpp
+D:\用户名\Documents\Visual Studio 2022\Projects\测试\测试\main.cpp(898,147): warning C4244: “参数”: 从“T”转换到“T”，可能丢失数据
+D:\用户名\Documents\Visual Studio 2022\Projects\测试\测试\main.cpp(898,147): warning C4244:         with
+D:\用户名\Documents\Visual Studio 2022\Projects\测试\测试\main.cpp(898,147): warning C4244:         [
+D:\用户名\Documents\Visual Studio 2022\Projects\测试\测试\main.cpp(898,147): warning C4244:             T=unsigned int
+D:\用户名\Documents\Visual Studio 2022\Projects\测试\测试\main.cpp(898,147): warning C4244:         ]
+D:\用户名\Documents\Visual Studio 2022\Projects\测试\测试\main.cpp(898,147): warning C4244:         and
+D:\用户名\Documents\Visual Studio 2022\Projects\测试\测试\main.cpp(898,147): warning C4244:         [
+D:\用户名\Documents\Visual Studio 2022\Projects\测试\测试\main.cpp(898,147): warning C4244:             T=float
+D:\用户名\Documents\Visual Studio 2022\Projects\测试\测试\main.cpp(898,147): warning C4244:         ]
+D:\用户名\Documents\Visual Studio 2022\Projects\测试\测试\main.cpp(898,127): warning C4244: “参数”: 从“T”转换到“T”，可能丢失数据
+D:\用户名\Documents\Visual Studio 2022\Projects\测试\测试\main.cpp(898,127): warning C4244:         with
+D:\用户名\Documents\Visual Studio 2022\Projects\测试\测试\main.cpp(898,127): warning C4244:         [
+D:\用户名\Documents\Visual Studio 2022\Projects\测试\测试\main.cpp(898,127): warning C4244:             T=unsigned int
+D:\用户名\Documents\Visual Studio 2022\Projects\测试\测试\main.cpp(898,127): warning C4244:         ]
+D:\用户名\Documents\Visual Studio 2022\Projects\测试\测试\main.cpp(898,127): warning C4244:         and
+D:\用户名\Documents\Visual Studio 2022\Projects\测试\测试\main.cpp(898,127): warning C4244:         [
+D:\用户名\Documents\Visual Studio 2022\Projects\测试\测试\main.cpp(898,127): warning C4244:             T=float
+D:\用户名\Documents\Visual Studio 2022\Projects\测试\测试\main.cpp(898,127): warning C4244:         ]
+D:\用户名\Documents\Visual Studio 2022\Projects\测试\测试\main.cpp(898,93): warning C4244: “参数”: 从“T”转换到“T”，可能丢失数据
+D:\用户名\Documents\Visual Studio 2022\Projects\测试\测试\main.cpp(898,93): warning C4244:         with
+D:\用户名\Documents\Visual Studio 2022\Projects\测试\测试\main.cpp(898,93): warning C4244:         [
+D:\用户名\Documents\Visual Studio 2022\Projects\测试\测试\main.cpp(898,93): warning C4244:             T=unsigned int
+D:\用户名\Documents\Visual Studio 2022\Projects\测试\测试\main.cpp(898,93): warning C4244:         ]
+D:\用户名\Documents\Visual Studio 2022\Projects\测试\测试\main.cpp(898,93): warning C4244:         and
+D:\用户名\Documents\Visual Studio 2022\Projects\测试\测试\main.cpp(898,93): warning C4244:         [
+D:\用户名\Documents\Visual Studio 2022\Projects\测试\测试\main.cpp(898,93): warning C4244:             T=float
+D:\用户名\Documents\Visual Studio 2022\Projects\测试\测试\main.cpp(898,93): warning C4244:         ]
+D:\用户名\Documents\Visual Studio 2022\Projects\测试\测试\main.cpp(898,69): warning C4244: “参数”: 从“T”转换到“T”，可能丢失数据
+D:\用户名\Documents\Visual Studio 2022\Projects\测试\测试\main.cpp(898,69): warning C4244:         with
+D:\用户名\Documents\Visual Studio 2022\Projects\测试\测试\main.cpp(898,69): warning C4244:         [
+D:\用户名\Documents\Visual Studio 2022\Projects\测试\测试\main.cpp(898,69): warning C4244:             T=unsigned int
+D:\用户名\Documents\Visual Studio 2022\Projects\测试\测试\main.cpp(898,69): warning C4244:         ]
+D:\用户名\Documents\Visual Studio 2022\Projects\测试\测试\main.cpp(898,69): warning C4244:         and
+D:\用户名\Documents\Visual Studio 2022\Projects\测试\测试\main.cpp(898,69): warning C4244:         [
+D:\用户名\Documents\Visual Studio 2022\Projects\测试\测试\main.cpp(898,69): warning C4244:             T=float
+D:\用户名\Documents\Visual Studio 2022\Projects\测试\测试\main.cpp(898,69): warning C4244:         ]
+  测试.vcxproj -> D:\用户名\Documents\Visual Studio 2022\Projects\测试\x64\Debug\测试.exe
