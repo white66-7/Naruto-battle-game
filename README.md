@@ -71,3 +71,22 @@
 | **附加包含目录** | `C:\Users\12625\Desktop\SFML\include`<br>`D:\box\box2d-3.1.1\include` |
 | **附加库目录** | `C:\Users\12625\Desktop\SFML\lib`<br>`D:\box\box2d-3.1.1\build\src\Release` |
 | **链接依赖** | `box2d.lib`<br>`sfml-window.lib`<br>`sfml-system.lib`<br>`sfml-graphics.lib`<br>`sfml-audio.lib` |
+## 📁 项目结构
+```text
+火影格斗/
+├── 测试.vcxproj # Visual Studio 项目文件
+├── 测试.vcxproj.filters # 文件筛选器（如有）
+├── main.cpp # 主程序入口
+├── susake.cpp # 核心功能实现（角色、战斗逻辑等）
+└── README.md # 本文件
+```
+> 文件名“测试”是当初随便起的
+
+## 🚀 编译与运行
+
+### 使用 Visual Studio 2022
+
+1. 双击 `.vcxproj` 文件打开项目
+2. 选择目标配置（如 `Debug | x64`）
+3. 按 `Ctrl + Shift + B` 编译
+4. 按 `F5` 启动调试
