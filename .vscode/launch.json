@@ -2,31 +2,40 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Debug x64",
+            "name": "Run FolkFight (built exe)",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/output/myapp_debug_x64.exe",
+            "program": "${workspaceFolder}/output/FolkFight.exe",
             "args": [],
             "stopAtEntry": false,
-            "cwd": "${workspaceFolder}",
+            "cwd": "${workspaceFolder}/output",
+            "environment": [],
+            "externalConsole": false,
+            "noDebug": true,
+            "console": "integratedTerminal",
+            "preLaunchTask": "build-release"
+        },
+        {
+            "name": "Attach with gdb (requires working gdb.exe)",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/output/FolkFight.exe",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}/output",
             "environment": [],
             "externalConsole": false,
             "MIMode": "gdb",
-            "miDebuggerPath": "D:\\vscode\\mingw64\\bin\\gdb.exe",
+            "miDebuggerPath": "${workspaceFolder}/toolchain/gdb/gdb.exe",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
             "console": "integratedTerminal",
-            "preLaunchTask": "build-debug-x64 (MinGW)"  // 与 tasks.json 的 label 一致
-        },
-        {
-            "name": "Release x64",
-            "type": "cppvsdbg",
-            "request": "launch",
-            "program": "${workspaceFolder}/output/myapp_release_x64.exe",
-            "args": [],
-            "stopAtEntry": false,
-            "cwd": "${workspaceFolder}",
-            "environment": [],
-            "console": "integratedTerminal",
-            "preLaunchTask": "build-release-x64"
+            "preLaunchTask": "build-release"
         }
     ]
 }

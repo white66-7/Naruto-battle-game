@@ -1,120 +1,161 @@
-# 🎮 火影格斗
+<div align="center">
 
-> 大一上学期花了三个月（2025.09 – 2025.12）写的 C++ 小游戏，基于 **SFML** 和 **Box2D** 实现。<br>
->做了一半，后面摆烂了，一直手搓效率实在是太慢了<br>
-> 2026年7月初从 Visual Studio 迁移到了 VSCode后提交到GitHub，代码虽然又长又臭，UI 也蛮丑陋的，但毕竟是新手嘛，其实现在也能理解
+# 火影格斗 FolkFight
 
----
-<img width="1192" height="1122" alt="屏幕截图 2026-07-04 212038" src="https://github.com/user-attachments/assets/aa57895e-bc34-46df-b27a-3eb2d233e993" />
+**基于 SFML 3 与 Box2D 构建的 2D 横版格斗小游戏**
 
-## ✨ 功能特性
+[![C++](https://img.shields.io/badge/C++-20-00599C.svg?style=flat-square&logo=cplusplus&logoColor=white)](https://isocpp.org/)
+[![SFML](https://img.shields.io/badge/SFML-3.0.2-8CC445.svg?style=flat-square&logo=sfml&logoColor=white)](https://www.sfml-dev.org/)
+[![Box2D](https://img.shields.io/badge/Box2D-3.1.1-B9292E.svg?style=flat-square)](https://box2d.org/)
+[![MinGW](https://img.shields.io/badge/MinGW--w64-GCC%2016.2-F0A030.svg?style=flat-square&logo=gcc&logoColor=white)](https://www.mingw-w64.org/)
+[![Windows](https://img.shields.io/badge/Windows-10%2B-0078D4.svg?style=flat-square&logo=windows&logoColor=white)](https://www.microsoft.com/windows)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](LICENSE)
 
-- 🎨 **2D 图形渲染**：基于 SFML 实现
-- 🎵 **音频播放支持**：SFML Audio 模块
-- ⚙️ **物理模拟**：集成 Box2D 物理引擎
-- 🖥️ **Windows 平台支持**（x86 / x64）
-
----
-
-## 🛠️ 技术栈
-
-| 组件 | 说明 |
-|------|------|
-| **语言** | C++（ISO C++20 / 最新标准） |
-| **编译器** | MSVC v143（Visual Studio 2022） |
-| **图形 / 音频** | SFML（Simple and Fast Multimedia Library） |
-| **物理引擎** | Box2D v3.1.1 |
-| **构建系统** | MSBuild（Visual Studio 项目） |
-| **目标平台** | Windows 10.0+（Win32 / x64） |
-| **开发环境** | 原 Visual Studio 2022 → 现已迁移至 VSCode |
+<p align="center">
+  <a href="#项目概述">项目概述</a> •
+  <a href="#直接运行">直接运行</a> •
+  <a href="#功能特性">功能特性</a> •
+  <a href="#技术栈">技术栈</a> •
+  <a href="#项目结构">项目结构</a> •
+  <a href="#从源码编译">从源码编译</a>
+</p>
 
 ---
 
-## 📦 依赖库安装
+</div>
 
-### 1. SFML
-- 下载地址：https://www.sfml-dev.org/download.php
-- 解压到 `C:\Users\12625\Desktop\SFML\`
-- 目录结构应包含 `include/` 和 `lib/`
+## 项目概述
 
-### 2. Box2D
-- 仓库地址：https://github.com/box2d/box2d
-- 版本要求：v3.1.1
-- 解压到 `D:\box\box2d-3.1.1\`
-- 需自行编译生成 `box2dd.lib`（Debug）和 `box2d.lib`（Release）
+本项目是大一上学期（2025.09 – 2025.12）用 C++ 手写的 2D 横版格斗游戏原型，基于 **SFML** 完成图形渲染与音频播放，基于 **Box2D** 完成物理模拟与碰撞检测。
+
+最初在 Visual Studio 2022 中开发，2026 年 7 月迁移至 VSCode，并重新整理为 **单文件全静态发布** 的形式——下载即玩，不需要安装任何运行库。
+
+<img width="1192" height="1122" alt="游戏截图" src="https://github.com/user-attachments/assets/aa57895e-bc34-46df-b27a-3eb2d233e993" />
 
 ---
 
-## 🔧 编译配置
+## 直接运行
 
-### 支持配置
-
-| 配置 | 平台 | 说明 |
-|------|------|------|
-| Debug | Win32 | 调试版，32位 |
-| Release | Win32 | 发布版，32位 |
-| Debug | x64 | 调试版，64位（推荐开发用） |
-| Release | x64 | 发布版，64位（推荐最终发布） |
-
-### Debug x64 配置详情
-
-| 项目 | 内容 |
-|------|------|
-| **附加包含目录** | `C:\Users\12625\Desktop\SFML\include`<br>`D:\box\box2d-3.1.1\include` |
-| **附加库目录** | `C:\Users\12625\Desktop\SFML\lib`<br>`D:\box\box2d-3.1.1\build\src\Debug` |
-| **链接依赖** | `box2dd.lib`<br>`sfml-window-d.lib`<br>`sfml-system-d.lib`<br>`sfml-graphics-d.lib`<br>`sfml-audio-d.lib` |
-
-### Release x64 配置详情
-
-| 项目 | 内容 |
-|------|------|
-| **附加包含目录** | `C:\Users\12625\Desktop\SFML\include`<br>`D:\box\box2d-3.1.1\include` |
-| **附加库目录** | `C:\Users\12625\Desktop\SFML\lib`<br>`D:\box\box2d-3.1.1\build\src\Release` |
-| **链接依赖** | `box2d.lib`<br>`sfml-window.lib`<br>`sfml-system.lib`<br>`sfml-graphics.lib`<br>`sfml-audio.lib` |
-## 📁 项目结构
-```text
-火影格斗/
-├── 测试.vcxproj # Visual Studio 项目文件
-├── 测试.vcxproj.filters # 文件筛选器（如有）
-├── main.cpp # 主程序入口
-├── susake.cpp # 核心功能实现（角色、战斗逻辑等）
-└── README.md # 本文件
-```
-> 文件名“测试”是当初随便起的
-
-## 🚀 直接运行（推荐）
-
-**下载仓库后，直接双击运行，无需安装任何东西：**
+**下载仓库后开箱即用，无需安装任何东西。**
 
 ```text
 output/
 ├── FolkFight.exe   ← 双击运行
-└── resources/      ← 游戏素材，必须和 exe 放在一起
+└── resources/      ← 游戏素材，必须与 exe 同级
 ```
 
-> `FolkFight.exe` 是**全静态链接**的 Release 版，已把 SFML、Box2D、FreeType、OpenAL 等
-> 全部编进 exe 内，**不依赖任何第三方 DLL**，也不需要安装 VC++ 运行库。
-> 只要是 64 位 Windows 10 及以上即可直接运行。
+> `FolkFight.exe` 为**全静态链接**的 Release 版本，SFML、Box2D、FreeType、
+> HarfBuzz、OpenAL、FLAC、Vorbis 等依赖已全部编译进可执行文件内部，
+> **不依赖任何第三方 DLL，也无需安装 VC++ 运行库**。
+> 仅需 64 位 Windows 10 及以上系统。
 
 ---
 
-## 🔨 从源码编译
+## 功能特性
 
-### 使用构建脚本（MinGW-w64）
+### 角色与动画
+- **多帧动画系统**：支持待机、奔跑、起跳、攻击、遁地、发波等动画状态切换与帧计时。
+- **主角动作**：基于 `sasuke` 类实现输入响应、动画驱动与物理体同步。
 
-1. 安装 MinGW-w64（推荐 MSYS2 的 UCRT64 版，GCC 13+）
-2. 把 SFML 3.0.x、Box2D 3.1.1 的静态库放进 `.dl/mingwlibs/ucrt64/`
-3. 修改 `build_release.bat` 顶部的 `MINGW` 变量，指向你的 `mingw64/bin`
-4. 运行 `build_release.bat`
+### 物理与战斗
+- **Box2D 3.1 物理世界**：重力模拟、静态地形碰撞体、平台落点判定。
+- **碰撞检测**：基于 AABB 的精确碰撞测试，用于攻击判定。
+- **镜头跟随**：摄像机根据角色位置平滑更新视口。
 
-产物为 `output/FolkFight.exe`，同样是全静态单文件。
+### 场景与资源
+- **纹理与精灵**：统一的纹理加载流程，逐帧裁剪渲染。
+- **音频播放**：菜单音乐、攻击音效与技能音效三通道支持。
+- **UI 与字体**：基于 SFML 文本渲染的菜单界面。
 
-### 使用 Visual Studio 2022
+---
 
-1. 双击 `测试.vcxproj` 打开项目
-2. 选择目标配置（如 `Debug | x64`）
-3. 按 `Ctrl + Shift + B` 编译
-4. 按 `F5` 启动调试
+## 技术栈
 
-> 注意：VS 编译出的是 **Debug 版**，依赖 `VCRUNTIME140D.dll` 等调试运行时（不可再分发），
-> 只适合本机调试，**不适合分发给别人**。要发布请用上面的静态构建。
+| 分类 | 核心技术 / 依赖 | 说明 |
+| :--- | :--- | :--- |
+| **语言标准** | C++20 | 使用 `std::filesystem`、结构化绑定等特性 |
+| **图形与窗口** | SFML 3.0.2 | 渲染、事件、窗口管理 |
+| **音频** | SFML Audio + OpenAL | 音效与背景音乐播放 |
+| **物理引擎** | Box2D 3.1.1 | 刚体、形状与碰撞响应 |
+| **字体渲染** | FreeType + HarfBuzz | SFML 文本依赖链 |
+| **构建工具链** | MinGW-w64 (GCC 16.2, UCRT64) | 全静态链接构建 |
+| **编辑器** | Visual Studio Code | C/C++ 扩展 + 自定义构建任务 |
+
+---
+
+## 项目结构
+
+```text
+battle/
+├── output/
+│   ├── FolkFight.exe           # 全静态可执行文件（发布产物）
+│   └── resources/              # 游戏素材（PNG / OGG / MP3 / TTF）
+├── main.cpp                    # 主程序：游戏循环、场景构建与 UI
+├── susake.cpp                  # 角色模块实现
+├── build_release.bat           # 一键全静态构建脚本
+├── LICENSE                     # MIT 开源协议
+├── README.md
+└── .vscode/                    # 编辑器配置
+    ├── tasks.json              # 构建任务
+    ├── launch.json             # 运行 / 调试配置
+    └── c_cpp_properties.json   # IntelliSense 头文件路径
+```
+
+---
+
+## 从源码编译
+
+### 环境准备
+
+- **MinGW-w64**（推荐 MSYS2 的 UCRT64 变体，GCC 13+）
+- 静态库：SFML 3.0.x、Box2D 3.1.1 及其依赖（FreeType、HarfBuzz、OpenAL、FLAC、Vorbis、libpng、zlib）
+
+### 构建步骤
+
+1. 将静态库放入 `.dl/mingwlibs/ucrt64/`（`include/` 与 `lib/` 目录）
+2. 修改 [build_release.bat](build_release.bat) 顶部的 `MINGW` 变量，指向你的 `mingw64/bin`
+3. 执行构建：
+
+```bash
+# Windows 命令行
+build_release.bat
+```
+
+产物输出至 `output/FolkFight.exe`，同样是全静态单文件，不依赖任何外部 DLL。
+
+### 在 VSCode 中
+
+```text
+Ctrl + Shift + B   # 执行构建任务（build-release）
+F5                 # 选择 "Run FolkFight (built exe)" 运行
+```
+
+`launch.json` 提供两个配置：
+
+| 配置 | 用途 |
+| :--- | :--- |
+| `Run FolkFight (built exe)` | 构建后直接以集成终端运行，日常使用选这个 |
+| `Attach with gdb (...)` | 需要断点调试时使用，要求 `toolchain/gdb/gdb.exe` 可正常工作 |
+
+两个配置的 `preLaunchTask` 均为 `build-release`，按 F5 时会自动先编译再启动。
+
+---
+
+## 已知限制
+
+- **断点调试暂不可用**：当前 MinGW 工具链附带的 `gdb.exe` 依赖了与
+  MSYS2 现有 `gettext` 版本不兼容的导入符号（`libintl-8.dll` 缺少 `rpl_getcwd`），
+  启动时会报 `ENTRYPOINT_NOT_FOUND`。日常运行不受影响，代码层面的错误由
+  VSCode C/C++ 扩展的 IntelliSense 实时提示。如需断点调试，可另行安装
+  匹配版本的 `gdb`，或改用 Visual Studio 的 MSVC 工具链重新编译 Debug 版。
+- **游戏为半成品**：角色招式、多关卡与结算逻辑尚未完成。
+
+---
+
+## 开源协议与版权声明
+
+本项目基于 **MIT 许可协议** 开源，详见 [LICENSE](LICENSE)。
+
+- **技术代码**：可自由用于学习、修改与分发。
+- **美术与音频素材**：`resources/` 目录内的图片、音频素材版权归原作者所有，
+  仅供学习交流，**严禁商用**。
