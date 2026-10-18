@@ -1,0 +1,26 @@
+# ===== 构建中间产物 =====
+*.obj
+*.ilk
+*.pdb
+*.idb
+*.tlog
+*.recipe
+*.lastbuildstate
+x64/
+Debug/
+Release/
+.vs/
+build/
+
+# ===== 本地工具链 / 下载缓存（体积大，不提交）=====
+toolchain/
+.dl/
+
+# ===== 编译过程中生成的 exe（发布版在 output/ 下，需保留）=====
+/output/*.ilk
+/output/*.pdb
+
+# ===== 系统文件 =====
+Thumbs.db
+desktop.ini
+.DS_Store

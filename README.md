@@ -82,11 +82,39 @@
 ```
 > 文件名“测试”是当初随便起的
 
-## 🚀 编译与运行
+## 🚀 直接运行（推荐）
+
+**下载仓库后，直接双击运行，无需安装任何东西：**
+
+```text
+output/
+├── FolkFight.exe   ← 双击运行
+└── resources/      ← 游戏素材，必须和 exe 放在一起
+```
+
+> `FolkFight.exe` 是**全静态链接**的 Release 版，已把 SFML、Box2D、FreeType、OpenAL 等
+> 全部编进 exe 内，**不依赖任何第三方 DLL**，也不需要安装 VC++ 运行库。
+> 只要是 64 位 Windows 10 及以上即可直接运行。
+
+---
+
+## 🔨 从源码编译
+
+### 使用构建脚本（MinGW-w64）
+
+1. 安装 MinGW-w64（推荐 MSYS2 的 UCRT64 版，GCC 13+）
+2. 把 SFML 3.0.x、Box2D 3.1.1 的静态库放进 `.dl/mingwlibs/ucrt64/`
+3. 修改 `build_release.bat` 顶部的 `MINGW` 变量，指向你的 `mingw64/bin`
+4. 运行 `build_release.bat`
+
+产物为 `output/FolkFight.exe`，同样是全静态单文件。
 
 ### 使用 Visual Studio 2022
 
-1. 双击 `.vcxproj` 文件打开项目
+1. 双击 `测试.vcxproj` 打开项目
 2. 选择目标配置（如 `Debug | x64`）
 3. 按 `Ctrl + Shift + B` 编译
 4. 按 `F5` 启动调试
+
+> 注意：VS 编译出的是 **Debug 版**，依赖 `VCRUNTIME140D.dll` 等调试运行时（不可再分发），
+> 只适合本机调试，**不适合分发给别人**。要发布请用上面的静态构建。

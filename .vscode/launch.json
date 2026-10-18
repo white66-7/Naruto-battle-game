@@ -3,15 +3,18 @@
     "configurations": [
         {
             "name": "Debug x64",
-            "type": "cppvsdbg",          // 使用 MSVC 调试引擎
+            "type": "cppdbg",
             "request": "launch",
             "program": "${workspaceFolder}/output/myapp_debug_x64.exe",
             "args": [],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
             "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "miDebuggerPath": "D:\\vscode\\mingw64\\bin\\gdb.exe",
             "console": "integratedTerminal",
-            "preLaunchTask": "build-debug-x64"  // 与 tasks.json 的 label 一致
+            "preLaunchTask": "build-debug-x64 (MinGW)"  // 与 tasks.json 的 label 一致
         },
         {
             "name": "Release x64",

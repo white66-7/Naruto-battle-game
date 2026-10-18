@@ -6,9 +6,21 @@
             "type": "shell",
             "command": "cmd",
             "args": ["/c", "build.bat"],
-            "group": { "kind": "build", "isDefault": true },
+            "group": "build",
             "problemMatcher": ["$msCompile"],
             "options": { "cwd": "${workspaceFolder}" }
+        },
+        {
+            "label": "build-debug-x64 (MinGW)",
+            "group": { "kind": "build", "isDefault": true },
+            "type": "shell",
+            "command": "cmd",
+            "args": [
+                "/c",
+                "set PATH=${workspaceFolder}\\toolchain\\bin;D:\\vscode\\mingw64\\bin;%PATH% && D:\\vscode\\mingw64\\bin\\g++.exe -std=c++20 -g -O0 -o ${workspaceFolder}\\output\\myapp_debug_x64.exe ${workspaceFolder}\\main.cpp ${workspaceFolder}\\susake.cpp -I${workspaceFolder}\\toolchain\\sysroot\\x86_64-w64-mingw32\\include -ID:\\box+SFML+easyx\\SFML\\include -ID:\\box+SFML+easyx\\box2d-3.1.1\\include -LD:\\box+SFML+easyx\\SFML\\lib -LD:\\box+SFML+easyx\\box2d-3.1.1\\build\\src\\Debug -lsfml-window-d -lsfml-system-d -lsfml-graphics-d -lsfml-audio-d -lbox2dd -lopengl32 -lgdi32 -lwinmm"
+            ],
+            "options": { "cwd": "${workspaceFolder}" },
+            "problemMatcher": ["$gcc"]
         }
     ]
 }
